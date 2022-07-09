@@ -2,7 +2,7 @@
 .docker/volumes
 
 # Environment variables
-.env
+#.env
 
 # Misc
 .DS_Store
