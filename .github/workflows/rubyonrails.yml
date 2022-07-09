@@ -44,9 +44,7 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./ror
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -54,10 +52,13 @@ jobs:
         uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
         with:
           bundler-cache: true
+          working-directory: ./ror
       # Add or replace any other lints here
       - name: Security audit dependencies
+        working-directory: ./ror
         run: bin/bundler-audit --update
       - name: Security audit application code
+        working-directory: ./ror
         run: bin/brakeman -q -w2
       - name: Lint Ruby files
         working-directory: ./ror

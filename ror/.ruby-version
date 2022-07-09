@@ -1,1 +1,4 @@
-ruby-3.1.2
+#Added this version here to be able to use github actions due that they does not have 3.1.2
+ruby-3.1.0
+#real 3.1.2
+
