@@ -25,15 +25,12 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
-    defaults:
-      run:
-        working-directory: ./ror
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        working-directory: ./ror
       # Add or replace dependency steps here
       - name: Install Ruby and gems
-        working-directory: ./ror
         uses: ruby/setup-ruby@8f312efe1262fb463d906e9bf040319394c18d3e # v1.92
         with:
           bundler-cache: true
